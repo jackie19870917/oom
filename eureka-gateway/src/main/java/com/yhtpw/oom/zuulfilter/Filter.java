@@ -32,15 +32,15 @@ public class Filter extends ZuulFilter {
 
     @Override
     public Object run() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
-        String accessToken = request.getParameter("token");
-        if (StringUtils.isBlank(accessToken)) {
-            ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(401);
-            return null;
-        }
-        return "success";
+//        RequestContext ctx = RequestContext.getCurrentContext();
+//        HttpServletRequest request = ctx.getRequest();
+//        String accessToken = request.getParameter("token");
+//        if (StringUtils.isBlank(accessToken)) {
+//            ctx.setSendZuulResponse(false);
+//            ctx.setResponseStatusCode(401);
+//            return null;
+//        }
+        return null;
     }
 
 }
