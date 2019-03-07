@@ -15,7 +15,7 @@ public class PlusService {
 	@Autowired
     RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "Fallback")
+    @HystrixCommand(fallbackMethod = "Fallback") // 增加熔断机制，异常后调用Fallback方法
     public List<String> plus() {
         return restTemplate.getForEntity("http://service1/services", List.class).getBody();
     }
